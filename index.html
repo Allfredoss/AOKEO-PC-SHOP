@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AOKEO PC — Магазин компютерів</title>
-  <meta name="description" content="Современный магазин компьютеров: игровые ПК, рабочие станции и ультраПК." />
+  <meta name="description" content="Сучасний магазин комп’ютерів: ігрові ПК та робочі станції." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' rx='48' fill='%230a84ff'/%3E%3Cpath fill='white' d='M64 176h128v12a12 12 0 0 1-12 12H76a12 12 0 0 1-12-12zM52 72a12 12 0 0 1 12-12h128a12 12 0 0 1 12 12v88H52z'/%3E%3C/svg%3E" />
   <style>
     :root{
@@ -13,7 +13,7 @@
       --ink: #e6f1ff;          
       --muted: #9fb3d9;        
       --blue: #1e90ff;         
-      --blue-2: #0a84ff;       /
+      --blue-2: #0a84ff;       
       --line: rgba(255,255,255,0.08);
       --glass: rgba(255,255,255,0.06);
       --shadow: 0 10px 30px rgba(2, 12, 27, 0.6);
@@ -144,7 +144,7 @@
 
       <nav class="navlinks">
         <a href="#catalog">Каталог</a>
-        <a href="#about">О нас</a>
+        <a href="#about">Про нас</a>
         <a href="#contacts">Контакти</a>
       </nav>
 
@@ -170,18 +170,18 @@
     <section class="hero" id="home">
       <div class="hero-inner">
         <div>
-          <h1>Мощьні комп’ютер для ігор та роботи</h1>
-          <p>Игрові ПК і робочі станціі — оптимальні конфигураціі на кращих комплектующих. Сбірка, гарантія и підтримка.</p>
+          <h1>Потужні комп’ютери для ігор та роботи</h1>
+          <p>Ігрові ПК і робочі станції — оптимальні конфігурації на кращих компонентах. Збірка, гарантія і підтримка.</p>
           <div class="hero-cta">
             <a href="#catalog" class="btn primary">Дивитися каталог</a>
-            <a href="#contacts" class="btn">Зв’язатися с нами</a>
+            <a href="#contacts" class="btn">Зв’язатися з нами</a>
           </div>
         </div>
         <div class="hero-card">
           <div class="glow" aria-hidden="true"></div>
           <h3 style="margin:0 0 8px">Чого AOKEO?</h3>
           <ul style="margin:0; padding-left:18px; color:var(--muted)">
-            <li>Якість сбірки</li>
+            <li>Якість збірки</li>
             <li>Обитні робочі</li>
             <li>Приємні ціни</li>
           </ul>
@@ -205,8 +205,8 @@
 
     <section id="about" style="margin-top:42px">
       <div class="hero-card">
-        <h3 style="margin:0 0 10px">О нас</h3>
-        <p class="meta">Ми — команда энтузіастів, собираємо і продаємо комп’ютери с 2025 року. Любимо чисті сбірки, тихі системи охолодження і акуратний кабель-менеджмент.</p>
+        <h3 style="margin:0 0 10px">Про нас</h3>
+        <p class="meta">Ми — команда ентузіастів, збираємо і продаємо комп’ютери з 2025 року. Любимо чисті збірки, тихі системи охолодження та акуратний кабель-менеджмент.</p>
       </div>
     </section>
 
@@ -244,7 +244,7 @@
   
   <aside class="drawer" id="drawer" aria-hidden="true">
     <header>
-      <h3>Ваша корзина</h3>
+      <h3>Ваш кошик</h3>
     </header>
     <div class="cart-items" id="cartItems"></div>
     <div class="footer">
@@ -252,7 +252,7 @@
         <strong>Ітог:</strong>
         <strong id="cartTotal">0 ₴</strong>
       </div>
-      <button id="checkout" class="btn primary" style="width:100%">Оформити заказ</button>
+      <button id="checkout" class="btn primary" style="width:100%">Оформити замовлення</button>
     </div>
   </aside>
 
@@ -267,7 +267,7 @@
       {id:6, name:'Entry', price:54900, category:'Бюджетный', popular:5, created:'2025-03-18', specs:['Ryzen 5 5500','RTX 3050','16 ГБ DDR4','512 ГБ NVMe'], badge:'Бюджет'}
     ];
 
-    const categories = ['Игровой ПК','Рабочая станция','УльтраПК','Бюджетный'];
+    const categories = ['Игровий ПК','Робоча станція','Бюджетний'];
 
    
     const state = {
@@ -322,7 +322,7 @@
       cartCount.textContent = totalQty;
       cartItemsEl.innerHTML = '';
       if(state.cart.length===0){
-        cartItemsEl.innerHTML = '<div class="meta">Корзина пуста</div>';
+        cartItemsEl.innerHTML = '<div class="meta">Кошик порожній</div>';
       } else {
         state.cart.forEach(item=>{
           const row = document.createElement('div');
@@ -336,10 +336,10 @@
               <div class="meta">${formatPrice(item.price)}</div>
             </div>
             <div class="qty">
-              <button aria-label="Минус" onclick="decQty(${item.id})">−</button>
+              <button aria-label="Мінус" onclick="decQty(${item.id})">−</button>
               <span>${item.qty}</span>
               <button aria-label="Плюс" onclick="incQty(${item.id})">+</button>
-              <button aria-label="Удалить" onclick="removeItem(${item.id})" title="Удалить" style="margin-left:8px">✕</button>
+              <button aria-label="Видалити" onclick="removeItem(${item.id})" title="Видалити" style="margin-left:8px">✕</button>
             </div>`;
           cartItemsEl.appendChild(row);
         });
@@ -358,8 +358,8 @@
     drawer.addEventListener('click', (e)=>{ if(e.target===drawer){ drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); } });
 
     document.getElementById('checkout').addEventListener('click', ()=>{
-      if(!state.cart.length) return alert('Корзина пуста');
-      alert('Спасибо за заказ! Менеджер свяжется с вами.');
+      if(!state.cart.length) return alert('Кошик порожній');
+      alert('Дякую за замовлення! Менеджер з вами.');
       state.cart = []; updateCartUI(); saveCart();
     });
 
@@ -413,7 +413,7 @@
       list = sortProducts(list);
       grid.innerHTML = '';
       if(list.length===0){
-        grid.innerHTML = `<div class='hero-card' style='grid-column:1/-1; text-align:center'>Ничего не найдено. Измените фильтры или запрос.</div>`;
+        grid.innerHTML = `<div class='hero-card' style='grid-column:1/-1; text-align:center'>Нічого не знайдено. Змінити фільтер або запрос.</div>`;
         return;
       }
       list.forEach(p=> grid.appendChild(productCard(p)));
