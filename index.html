@@ -386,7 +386,7 @@
           <div class="specs">${p.specs.map(s=>`<span class='spec'>${s}</span>`).join('')}</div>
           <div class="row">
             <div class="price">${formatPrice(p.price)}</div>
-            <button class="btn primary" aria-label="Добавить в корзину">В корзину</button>
+            <button class="btn primary" aria-label="Добавить в кошик">В кошик</button>
           </div>
         </div>`;
       el.querySelector('button').addEventListener('click', ()=> addToCart(p));
